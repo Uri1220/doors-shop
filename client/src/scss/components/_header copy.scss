@@ -1,0 +1,52 @@
+.header {
+    grid-area: h;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // background: #f5ce35 ;
+    background-image: linear-gradient(280deg, #00a5ff 58%, #0064b4);
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 100;
+}
+
+
+.header-right,
+.header-left {
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+}
+.header__link{
+    margin-right: 20px;
+    color: #dae8f1;
+    // font-weight:600;
+    font-size: 20px;
+}
+.header__link>a:hover{
+    color: #fff !important
+}
+
+
+.header-left button {
+    font-size: 3rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color:#dae8f1;
+    cursor: pointer;
+}
+
+
+.badge {
+    background-color: black;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.4rem;
+    margin-left: 0.2rem;
+}
+

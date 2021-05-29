@@ -1,0 +1,23 @@
+.payment {
+    padding: 10px 20px;
+    height: 100%;
+
+    &__top {
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            flex: 0 1 190px;
+
+            @media (max-width: 640px) {
+                flex: 0 1 150px;
+                margin: 5px auto;
+            }
+        }
+
+        p {
+            margin-left: 10px;
+            flex: 1 1 250px;
+        }
+    }
+}

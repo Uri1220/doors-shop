@@ -1,0 +1,34 @@
+.doors-main {   
+
+    &__top {
+        &__search {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+          
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                margin: 0px 10px 15px 0px;
+                cursor: pointer;
+                height: 42px;
+                width: 42px;
+                border: 1px solid #a4a4a4;
+
+                &.active {
+                    border: 3px solid #f6c502;
+                }
+
+                img {
+                     max-width: 100%;
+                }
+
+            }
+        }
+    }
+}

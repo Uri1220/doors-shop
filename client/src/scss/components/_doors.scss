@@ -1,0 +1,67 @@
+.doors {
+    padding: 0 30px;
+    @media (max-width: 640px) {
+       padding: 0;
+    }
+
+    &__title {
+        h1 {
+            display: flex;
+        }
+        p::first-letter {
+            text-transform: uppercase;
+        }
+        @media (max-width: 640px) {
+            p:first-child{
+                display: none;
+            }
+         }
+       
+        // @media (max-width: 768px) {
+        //     font-size: 12px;  
+        // }
+    }
+
+    &__search {
+        //style in SearchBox   
+    }
+
+    &__reduct-button {
+        margin-bottom: 10px;
+    }
+
+     &__regrupp-button {}
+
+    &__filter-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+
+        &__left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                flex-wrap: wrap;                
+             }
+            @media (max-width: 640px) {
+
+                div{
+                    margin: 0;
+                }
+             }
+             
+        }
+
+        &__right {
+            display: flex;
+            justify-content: start;
+        }
+    }
+
+    &__searched {}
+
+    &__products {}
+}
