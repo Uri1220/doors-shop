@@ -87,7 +87,8 @@ function DoorsMain() {
           ) : (
 
             <ul >
-              {colors.map((item, i) => (
+              {(colors.filter(el => el.cat === 'door')).map((item, i) => (
+              // {colors.map((item, i) => (
                 <li
                   className={s === i ? 'active' : ''}
 

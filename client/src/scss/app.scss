@@ -245,14 +245,10 @@ tbody > tr:nth-child(odd) {
 
 /* GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG */
 
-.hamburger {
-    display: none;
-}
+
 
 @media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
+   
 
     .grid-container {
         grid-template-areas: "h" "m" "f";

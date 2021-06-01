@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPenDetail } from '../redux/actions/pensA'
 import ListDown from '../components/MU/ListDown'
 import { addToCart} from '../redux/actions/cartA';
-
 
 ///////Tooltip////////// 
 import { withStyles } from '@material-ui/core/styles';
@@ -48,7 +46,6 @@ function PenOne(props) {
       .filter((x) => Array.isArray(pen[x]))
       .map((key) => (
         pen[key].map((item) => (
-          // console.log('image',item.image)
           image_arr.push(item.image)
         ))
       ))
@@ -60,36 +57,28 @@ function PenOne(props) {
       .filter((x) => Array.isArray(pen[x]))
       .map((key) => (
         pen[key].map((item) => (
-          // console.log('image',item.image)
           title_arr.push(item.colorName)
         ))
       ))
     return title_arr
-    // ["Snow Veralinga ", "Bianco Veralinga"]
 
   }
 
   const ima = imageArr()
   const tit = titleArr()
-  // console.log('titles', tit)
-  //  console.log('ima', ima)
-  //  console.log('s', s)
 
   function first() {
     if (pen.colors && pen.colors.length !== 0) {
       const firstColor = Object.keys(pen)
         .filter((x) => Array.isArray(pen[x]))
         .map((key) => (((pen[key][0]).colorName)))
-      // .map((key) => (((pen[key][0])._id)))
       return firstColor[0]
-      //Snow Veralinga 
     } else {
       return 'no-color'
     }
   }
 
   const firstColorName = first()
-  // console.log('firstColorName', firstColorName)
   //End Обработка COLORS
 
   React.useEffect(() => {
@@ -110,7 +99,6 @@ function PenOne(props) {
     props.history.push('/cart/' + '?sz=' + sz + '=cl=' + cl);
   };
   //  debugger
-  //  console.log('e', props.match.path)
 
 
   return (
@@ -134,7 +122,6 @@ function PenOne(props) {
               <div className='details__left'>
                 <div className="details__left_image">
                   <img src={ima.length ? ima[s] : pen.url} alt="11" />
-                  {/* <img src={door.url} alt="11" /> */}
                 </div>
               </div>
 
@@ -149,7 +136,6 @@ function PenOne(props) {
                       Object.keys(pen)
                         .filter((x) => Array.isArray(pen[x]))//["colors"]
                         .map((key) => (
-                          // key === colors                           
                           <ul key={pen._id} >
                             {pen[key].map((item, i) => (
                               <li
@@ -178,16 +164,13 @@ function PenOne(props) {
                     Цена
                       </span> <b>{pen.price} р.</b>
                 </div>
-
-
                
                 <div className='details__right_description'>
                   <div >
                     {pen.description &&
                       <ListDown des={pen.description} poz={1} />
                     }
-                  </div>
-                 
+                  </div>                 
 
                 </div>
 

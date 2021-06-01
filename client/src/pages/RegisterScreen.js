@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 import { register } from '../redux/actions/userA';
 import LoadingBox from '../components/my/LoadingBox';
 import MessageBox from '../components/my/MessageBox';
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 
 export default function RegisterScreen(props) {
+  const [open, setOpen] = React.useState(false);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,6 +23,22 @@ export default function RegisterScreen(props) {
   const [passwordError, setPasswordError] = useState('Поле не может быть пустым');
   const [blurEmail, setBlurEmail] = useState(false);
   const [emailError, setEmailError] = useState('Поле не может быть пустым');
+
+  // Snackbar
+  // const handleClick = () => {
+  //   setOpen(true);
+  // };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+
+  // end Snackbar
 
   const blurHandler = (e) => {
     switch (e.target.name) {
@@ -61,6 +84,9 @@ export default function RegisterScreen(props) {
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
+
+    setOpen(true);
+
     e.preventDefault();
     if (password !== confirmPassword) {
       // alert('Password and confirm password are not match');
@@ -81,10 +107,10 @@ export default function RegisterScreen(props) {
     setErrMes(error)
   }, [error, props.history, redirect, userInfo]);
 
-  useEffect(() => {
-    window.M.updateTextFields()
-    setErrMes('')
-  }, [])
+  // useEffect(() => {
+  //   window.M.updateTextFields()
+  //   setErrMes('')
+  // }, [])
 
 
   return (
@@ -158,6 +184,28 @@ export default function RegisterScreen(props) {
           </div>
         </div>
       </form>
+
+
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'left',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message={errMes}
+        action={
+          <React.Fragment>
+            <Button color="secondary" size="small" onClick={handleClose}>
+              UNDO
+            </Button>
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
+      />
     </div>
   );
 }

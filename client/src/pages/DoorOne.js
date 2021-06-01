@@ -6,7 +6,6 @@ import ListDown from '../components/MU/ListDown'
 import Size from '../components/my/Size'
 import { addToCart} from '../redux/actions/cartA';
 
-// import { DOORS_LIST_FAIL } from '../redux/constants/doorsConstants';
 ///////Tooltip////////// 
 import { withStyles } from '@material-ui/core/styles';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -32,13 +31,7 @@ function DoorOne(props) {
   const [s, setS] = React.useState(0) //для цвета active
 
   const productId = props.match.params.id;
-
-  // console.log('s', s)
-  // console.log('sz', sz)
-  // console.log('qty', qty)
-  // console.log('cl', cl)  
-  //  console.log('props.match.params.id', props.match.params.id)  //6083bb058f0d641e390cb5d7
-
+ 
   const dispatch = useDispatch()
   React.useEffect(() => {
     dispatch(fetchDoorDetail(productId))
@@ -46,29 +39,6 @@ function DoorOne(props) {
 
   const doorDetail = useSelector(state => state.door)
   const { door, isLoading, error } = doorDetail;
-    //  console.log('door', door)
-
-
-  ////  if(door.colors){
-  //  console.log('dd', door.colors.length)}
-    // console.log(door['colors'])
-
-  // ["price", "color_id", "size", "countInStock", "_id", 
-  // "title", "url", "typ", "category", "sub_category",
-  //  "description", "colors", "date", "__v"]
-  // Object.keys(door)
-  //   .filter((x) => Array.isArray(door[x]))//["colors"]
-
-  // Object.keys(door)
-  //   .filter((x) => Array.isArray(door[x]))
-  //   .map((key) => (console.log(key))) // -> colors
-
-  // const arr_name = String(Object.keys(door)
-  //   .filter((x) => Array.isArray(door[x]))[0]) //  = colors
-
-
-  //возвр массив полных картинок
-  //Обработка COLORS
  
   function imageArr() {
     const image_arr = []
@@ -83,8 +53,6 @@ function DoorOne(props) {
       )
     return image_arr
   }
- 
-
   
   function titleArr() {
     const title_arr = []
@@ -119,10 +87,7 @@ function DoorOne(props) {
   }
 
   const firstColorName = first()
-  //  console.log('fc', firstColorName)
   //End Обработка COLORS
-
-
 
   React.useEffect(() => {
     setCl(firstColorName)
@@ -138,9 +103,7 @@ function DoorOne(props) {
     dispatch(addToCart(productId, qty, ur , sz ,cl))
 
     props.history.push('/cart/' + '?sz=' + sz + '=cl=' + cl);
-  };
-
-
+  }
 
   return (
     <div className='details-wrapper'>
@@ -154,7 +117,6 @@ function DoorOne(props) {
             <button className='button' onClick={props.history.goBack}>Вернуться назад</button>
             <div className='details__title'>
               <h1>{door.title} {tit[s]}</h1>
-              {/* <h1>{door.title}</h1> */}
             </div>
 
             <div className="details">
@@ -162,7 +124,6 @@ function DoorOne(props) {
               <div className='details__left'>
                 <div className="details__left_image">
                   <img src={ima.length ? ima[s] : door.url} alt="11" />
-                  {/* <img src={door.url} alt="11" /> */}
                 </div>
               </div>
 

@@ -18,14 +18,8 @@ import OrdersList from '../../pages/OrdersList'
 import OrderScreen from '../../pages/OrderScreen'
 import OrderDeliverScreen from '../../pages/OrderDeliverScreen'
 import ProfileScreen from '../../pages/ProfileScreen'
-import DevRdReactToDo from '../../pages/dev_ed/DevRdReactToDo'
-import FlexCat from '../../pages/dev_ed/FlexCat'
-import select from '../../pages/dev_ed/select'
 import Breadcrumb from '../my/Breadcramb'
 import Color from '../../pages/Color'
-import { ColorsFormik } from '../../pages/dev_ed/ColorsFormik'
-import { NestedArray } from '../../pages/dev_ed/NestedArray'
-import StepperMU  from '../../pages/dev_ed/StepperMU'
 import Delivery from './Delivery'
 import Payment from './Payment'
 
@@ -103,12 +97,7 @@ const Content = () => {
           <Route path="/order/:id/deliver" exact component={OrderDeliverScreen} />
           <Route path="/orderhistory" component={OrderHistoryScreen} />
           <Route path="/profile" component={ProfileScreen} />
-          <Route path="/flex-cat" component={FlexCat} />
-          <Route path="/mu-search" component={StepperMU} />
-          <Route path="/select" component={select} />
           <Route path="/colors" component={Color} />
-          <Route path="/colors-formik" component={ColorsFormik} />
-          <Route path="/nested-array" component={NestedArray} />
         </Switch>
 
         

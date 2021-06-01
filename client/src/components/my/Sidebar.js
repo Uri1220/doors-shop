@@ -8,7 +8,7 @@ const Sidebar = ({ closeMenu,setVisiblePopup,array}) => {
   const handleOutsideClick = (event) => {
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(sortRef.current)) {
-       setVisiblePopup(false);
+      //  setVisiblePopup(false);
     }
   };
   React.useEffect(() => {

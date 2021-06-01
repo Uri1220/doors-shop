@@ -23,7 +23,9 @@ const Header = ({ openMenu }) => {
    return (
       <div className="header">
          <div className="header__top">
-            <button onClick={openMenu} className="hamburger">&#9776;</button>
+         <div onClick={openMenu} class="header-hamburger menu_header "> <span></span></div>
+
+
             <div className="header__phone">
                   <HeaderDropPhoneMU />
             </div>

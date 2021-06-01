@@ -9,15 +9,19 @@ import {array} from './data.js'
 
 
 
-import 'materialize-css'
+// import 'materialize-css'
 
 function App() {
 
   const [visiblePopup, setVisiblePopup] = React.useState(false);
 
+  console.log('visiblePopup',visiblePopup)
+  console.log('render')
+
+
 
   function openMenu() {
-    setVisiblePopup(true)
+    setVisiblePopup(!visiblePopup)
   }
   function closeMenu() {
     setVisiblePopup(false)
