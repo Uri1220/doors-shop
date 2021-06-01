@@ -24,6 +24,15 @@ Heroku Demo: https://doors-shop.herokuapp.com
   <li>Обслуживание заказов</li>
   <li>Редактирование личного профиля</li>
 </ul>
-Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to 
+<h2>Используемые технологии:</h2>
+
+ <ul>
+  <li>React</li>
+  <li>Redux</li>
+  <li>Node.js</li>
+  <li>Express & MongoDB</li>
+ <li>Material-UI & Sass</li>
+</ul>
+ 
 
 
